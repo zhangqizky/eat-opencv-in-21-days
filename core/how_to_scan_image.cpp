@@ -45,7 +45,7 @@ int main(int argc,char*argv[])
     if (argc < 3)
     {
         cout<<"Not enough parameters"<<endl;
-        return -1
+        return -1;
     }
     
     Mat I,J;
