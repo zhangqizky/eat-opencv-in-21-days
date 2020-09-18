@@ -83,9 +83,10 @@ void Sharpen(const Mat& myImage,Mat& Result)
         const uchar*current = myImage.ptr<uchar>(j  );
         const uchar*next =myImage.ptr<uchar>(j +1);
         
-        uchar*output = Result.ptr<uchar>();
+        uchar*output = Result.ptr<uchar>(j);
         for (int i = nChannels;i < nChannels*(myImage.cols -1);++i)
         {
+            //输出当前值等于current[i]*5 减去左边相邻current[i-nChannels]和右边相邻current[i+nChannels] 以及上边previous[i]相邻和下边next[i]相邻
             *output++ = saturate_cast<uchar>(5*current[i] - current[i-nChannels]-current[i+nChannels]-previous[i]-next[i]);
         }
     }
