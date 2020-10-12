@@ -63,7 +63,7 @@ int main(int argc, char **argv)
     Mat smoothedMat(2,3,CV_64F);
 
     VideoWriter outputVideo;
-    int codec = cv::VideoWriter::fourcc('M', 'P', 'E', 'G');
+    int codec = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');
     outputVideo.open("com.mp4", codec, 30 , frame_1.size());
 
     while(true)
