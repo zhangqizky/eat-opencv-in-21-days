@@ -50,6 +50,7 @@ int main()
     
     for(int i = 1;i < histSize; i++)
     {
+        //两点之间的直线，第一个点是bin的位置值，第二个点是该bin像素值对应的数目，也就是b_hist中索引为该bin像素的值，用蓝色去画
         line(histImage, Point(bin_w *(i-1),hist_h - cvRound(b_hist.at<float>(i-1))),
              Point(bin_w*(i),hist_h - cvRound(b_hist.at<float>(i))),
              Scalar(255,0,0),2,8,0);
